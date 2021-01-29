@@ -13,5 +13,14 @@ pipeline {
       }
     }
 
+    stage('Buzz Test') {
+      steps {
+        bat 'echo I am a $BUZZ_NAME'
+      }
+    }
+
+  }
+  environment {
+    BUZZ_NAME = 'Worker Bee'
   }
 }
