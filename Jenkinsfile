@@ -13,7 +13,7 @@ pipeline {
       }
     }
 
-    stage('Testing A') {
+    stage('Buzz test') {
       parallel {
         stage('Testing A') {
           steps {
@@ -23,7 +23,8 @@ pipeline {
 
         stage('Testing B') {
           steps {
-            bat 'timeout 10  && echo Done'
+            bat 'timeout 10 '
+            echo 'Done'
           }
         }
 
