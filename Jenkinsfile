@@ -23,7 +23,7 @@ pipeline {
 
         stage('Testing B') {
           steps {
-            bat 'timeout 10 > null'
+            sleep 10
             echo 'Done'
           }
         }
