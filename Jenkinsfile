@@ -13,9 +13,20 @@ pipeline {
       }
     }
 
-    stage('Buzz Test') {
-      steps {
-        bat 'echo I am a %BUZZ_NAME%'
+    stage('Testing A') {
+      parallel {
+        stage('Testing A') {
+          steps {
+            bat 'echo I am a %BUZZ_NAME%'
+          }
+        }
+
+        stage('Testing B') {
+          steps {
+            bat 'timeout 10  && echo Done'
+          }
+        }
+
       }
     }
 
